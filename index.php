@@ -221,7 +221,7 @@
         }
 
         function DeleteUser(deleteid){
-          if (confirm("Are you sure want to delete this User ? ")) {
+          if (confirm("Are you sure want to delete this User ? ")){
           $.ajax({
               url:"delete.php",
               type:'POST',
@@ -258,8 +258,7 @@
         var UpdateMobile =  $('#UpdateMobile').val();
         var hiddendata = $('#hiddendata').val();
         if(!UpdateName == '' && !UpdateEmail == '' && !UpdatePlace == '' && !UpdateMobile == '' && !hiddendata == ''){
-        
-        $.post("update.php",{
+          $.post("update.php",{
           UpdateName:UpdateName,
           UpdateEmail:UpdateEmail,
           UpdatePlace:UpdatePlace,
