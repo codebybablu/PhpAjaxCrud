@@ -198,7 +198,6 @@
             var addPlace =  $('#completePlace').val()
             var addMobile =  $('#completeMobile').val()
             if(!addName == '' && !addEmail == '' && !addPlace == '' && !addMobile == ''){
-
               $.ajax({
                   url:"insert.php",
                   type:'POST',
