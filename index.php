@@ -10,7 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>Crud Operation</title>
   </head>
   <body>
     <!-- Button trigger modal -->
@@ -78,7 +78,7 @@
       </div>
     </div>
     <div class="container">
-      <h3 class="text-center bg-dark text-white p-2">Students Data</h3>
+      <h3 class="text-center bg-dark text-white p-2">Crud Operation using Ajax Bootstrap Model</h3>
       <button
         type="button"
         class="btn btn-dark"
