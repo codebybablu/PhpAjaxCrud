@@ -15,7 +15,7 @@
   <body>
     <!-- Button trigger modal -->
 
-    <!-- Modal -->
+    <!-- Start Modal -->
     <div
       class="modal fade"
       id="exampleModal"
@@ -156,7 +156,7 @@
       </div>
     </div>
 
-
+  
     <div class="container">
       <h6 class="text-center bg-dark text-white p-2">Made By Bablu</h6>
       <!-- <h6 class="text-center bg-dark text-white p-2">2024</h6> -->
