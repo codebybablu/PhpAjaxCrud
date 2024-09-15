@@ -19,6 +19,7 @@ if(isset($_POST['displaySend']))
 
  $query = 'select * from users';
  $result = mysqli_query($conn,$query);
+ // if you want to print to check
 //  $rows = mysqli_num_rows($result);
 // if($rows>0)
   //{
