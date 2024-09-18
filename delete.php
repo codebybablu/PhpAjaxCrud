@@ -10,4 +10,5 @@ if(isset($_POST['deletesend'])){
  
 }
 
+mysqli_close($conn);
 ?>

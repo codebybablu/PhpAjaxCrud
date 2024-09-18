@@ -10,4 +10,5 @@
      $result = mysqli_query($conn,$query);
    }
 
+   mysqli_close($conn);
 ?>

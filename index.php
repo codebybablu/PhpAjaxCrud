@@ -30,7 +30,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
       <p>Don't have an account? <a href="register.php" class="text-decoration-none">Register here</a></p>
-      <p>Forget password? <a href="forgot_password.php" class="text-decoration-none">Reset password</a></p>
+      <p>Forget password? <a href="forgotpassword.php" class="text-decoration-none">Reset password</a></p>
     </form>
   </div>
 </div>
