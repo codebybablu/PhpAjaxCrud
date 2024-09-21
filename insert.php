@@ -7,8 +7,9 @@
    {
     $query =  "insert into users(name,email,place,mobile) values('$nameSend','$emailSend','$placeSend','$mobileSend')";
 
-     $result = mysqli_query($conn,$query);
+      $result = mysqli_query($conn,$query);
+
    }
 
-   mysqli_close($conn);
+
 ?>
