@@ -17,11 +17,10 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
     // }else{
     //     echo "something errors";
     // }
-
     }
 //    include('connect.php');
 
-//    extract($_POST);
+    extract($_POST);
 
 //    if(isset($_POST['nameSend']) && isset($_POST['emailSend']) && isset($_POST['sendPassword']) && isset($_POST['sendConfirmPassword'])){
 //     $name = $_POST['nameSend'];
