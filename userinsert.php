@@ -2,39 +2,29 @@
 
 include('connect.php');
 
-if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Hash and salt password
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    $sql = "Insert into userinfo (name,email,password) values('$name','$email','$hashedPassword')";
-    $query = mysqli_query($conn, $sql);
-    // if($query){
-    //     echo "created account successfully";
-    // }else{
-    //     echo "something errors";
-    // }
-    }
-//    include('connect.php');
-
-    extract($_POST);
-
-//    if(isset($_POST['nameSend']) && isset($_POST['emailSend']) && isset($_POST['sendPassword']) && isset($_POST['sendConfirmPassword'])){
-//     $name = $_POST['nameSend'];
-//     $email = $_POST['emailSend'];
-//     $password = $_POST['sendPassword'];
-//     $confirmPassword = $_POST['sendConfirmPassword'];
+    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
     
-//     if ($password !== $confirmPassword) {
-//         echo "Passwords do not match. Please try again.";
-//         exit;
-//     }
-//     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-//     $sql = "Insert into userinfo (name,email,password) values('$name','$email','$hashedPassword')";
-//     $query = mysqli_query($conn, $sql);
-//     }
-
+        // Check if user with same email already exists
+        $check_sql = "SELECT * FROM userinfo WHERE email = '$email'";
+        $check_query = mysqli_query($conn, $check_sql);
+        if (mysqli_num_rows($check_query) > 0) {
+            echo "Account with this email already exists";
+        } else {
+            // Hash and salt password
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            
+            $sql = "Insert into userinfo (name,email,password) values('$name','$email','$hashedPassword')";
+            $query = mysqli_query($conn, $sql);
+            if($query){
+                header('location:index.php');
+                exit;
+                // echo "created account successfully";
+            }else{
+                echo "something errors";
+            }
+        }
+    }
 ?>
