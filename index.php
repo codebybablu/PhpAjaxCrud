@@ -1,3 +1,32 @@
+<?php
+session_start();
+include "connect.php";
+
+      if (isset($_POST['submit'])) {
+
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        $sql = "select * from userinfo where email='$email'";
+        $res = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($res);
+        if (mysqli_num_rows($res) > 0) {
+          if($password = $row['password']){
+            $_SESSION['login'] = true;
+            // $_SESSION['id'] = $row['id'];
+           $_SESSION['name'] = $row['name'];
+            // header("location: display.php");
+           header("location: form.php");
+            
+          }else{
+           echo "Invalid credencials"; 
+          }
+          
+        }
+      }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,22 +41,23 @@
   <title>Document</title>
 </head>
 <body>
+
 <div class="container mt-4">
   <div class="row">
-    <form>
+    <form method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Remember me</label>
       </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" name="submit" class="btn btn-primary">Login</button>
       <p>Don't have an account? <a href="register.php" class="text-decoration-none">Register here</a></p>
       <p>Forget password? <a href="forgotpassword.php" class="text-decoration-none">Reset password</a></p>
     </form>

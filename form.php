@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,9 +17,11 @@
     <title>Crud Operation</title>
   </head>
   <body>
+
     <!-- Button trigger modal -->
 
     <!-- Start Modal -->
+    
     <div
       class="modal fade"
       id="exampleModal"
@@ -87,7 +93,15 @@
       >
         Add new user
       </button>  
-      <div id="displayDataTable"> </div>
+      
+    <?php if (isset($_SESSION['name'])): ?>
+      <a href="logout.php" class="btn btn-warning float-right">Logout</a>
+        <h6>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h6>
+    <?php else: ?>
+        <h6>Please log in to see your name.</h6>
+    <?php endif; ?>
+  
+    <div id="displayDataTable"> </div>
     </div>
     
 

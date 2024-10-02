@@ -45,13 +45,12 @@ if(isset($_POST['displaySend']))
      }
      $table.='</table>';
      echo $table;
+
  }
 //  else
 //  {
 //     echo" no records";
 //  }
 // }
-
-
 
 ?>
