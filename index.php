@@ -13,8 +13,10 @@ include "connect.php";
           if($password = $row['password']){
             $_SESSION['login'] = true;
             // $_SESSION['id'] = $row['id'];
+             // using session to print the username 
            $_SESSION['name'] = $row['name'];
-            // header("location: display.php");
+           
+           // header("location: display.php");
            header("location: form.php");
             
           }else{
