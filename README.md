@@ -14,3 +14,4 @@ Registration Complete
 
 Working on Login
 Login Complete
+Logout Complete
