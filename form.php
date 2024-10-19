@@ -100,7 +100,7 @@ session_start();
     <?php else: ?>
         <h6>Please log in to see your name.</h6>
     <?php endif; ?>
-  
+    <span><a href="forgotpassword.php">Chanage Password</a></span>
     <div id="displayDataTable"> </div>
     </div>
     
