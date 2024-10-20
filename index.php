@@ -11,10 +11,11 @@ include "connect.php";
         $row = mysqli_fetch_assoc($res);
         if (mysqli_num_rows($res) > 0) {
           if($password = $row['password']){
-            $_SESSION['login'] = true;
+            // $_SESSION['login'] = true;
             // $_SESSION['id'] = $row['id'];
              // using session to print the username 
            $_SESSION['name'] = $row['name'];
+            $_SESSION['email'] = $row['email'];
            
            // header("location: display.php");
            header("location: form.php");
