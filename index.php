@@ -43,9 +43,14 @@ include "connect.php";
   <title>Document</title>
 </head>
 <body>
-
-<div class="container mt-4">
-  <div class="row">
+  <div class="container mt-4">
+    <div class="row">
+    <?php if (isset($_SESSION['success'])): ?>
+            <div class="alert alert-success">
+                <?php echo $_SESSION['success']; ?>
+                <?php unset($_SESSION['success']); ?>
+            </div>
+      <?php endif; ?>
     <form method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>

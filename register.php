@@ -30,7 +30,9 @@ if (isset($_POST['submit'])) {
         $query = mysqli_query($conn, $sql);
 
         if ($query) {
-            header('Location: login.php'); // Redirect to login page after successful signup
+          $_SESSION['success'] = 'Account created successfully';
+          // echo "<script>alert('Account created successfully');</script>";
+            header('Location: index.php'); // Redirect to login page after successful signup
             exit;
         } else {
             echo "An error occurred while creating the account";
