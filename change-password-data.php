@@ -8,10 +8,11 @@ $new_password = $_POST['new_password'];
 $confirm_password = $_POST['confirm_password'];
 
 $query = "SELECT * FROM userinfo WHERE email = '".$_SESSION['email']."'";
+// query
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
-
-if (!password_verify($current_password, $user['password'])) {
+// for password verification
+if (password_verify($current_password, $user['password'])) {
   echo "Current password is incorrect.";
   exit;
 }
